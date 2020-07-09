@@ -1,14 +1,160 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>My Fist Program</title>
+
+    <style>
+        .no {
+            background-color: blueviolet;
+        }
+    </style>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css">
+
 </head>
 
 <body>
 
+    <!-- navbar code Start from Here -->
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">MY-TODO</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+            aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse " id="navbarNavDropdown">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#add">ADD <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#tbl">TABLE</a>
+                </li>
+
+
+            </ul>
+        </div>
+    </nav>
+
+
+    <!-- jumbotron code Start from Here -->
+
+    <div class="jumbotron" id="add">
+        <h1 class="display-4 text-center">Time : <span id="time"></span></h1>
+        <h2 class="lead text-center">Date : <span id="date"></span></h>
+            <hr class="my-4">
+            <div class="row">
+                <div class="col-md-4 mx-auto">
+                    <div class="card">
+                        <div class="card-header text-center">
+                            <h4>TODO LIST</h4>
+                        </div>
+                        <div class="card-body">
+
+                            <div class="row">
+                                <div class="col-md-12 ">
+
+                                    <label class="float-left"><b>Name : </b></label>
+                                    <input type="text" class="form-control" id="name" aria-describedby="emailHelp"
+                                        placeholder="Enter Name">
+
+                                </div>
+                            </div>
+
+
+                            <div class="row my-4">
+                                <div class="col-md-12 ">
+
+                                    <div class="form-group">
+                                        <label class="float-left"><b>Message :</b></label>
+                                        <textarea class="form-control" id="description" rows="3"
+                                            placeholder="Please Type Your Message Here !!!"></textarea>
+                                    </div>
+
+                                </div>
+                            </div>
+
+
+                            <button type="button" class="btn btn-success btn-lg btn-block float-right"
+                                id="myclick">Add</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+    </div>
+
+    <div class="row " id="tbl">
+        <div class="col-md-9 mx-auto">
+            <div class="card">
+                <div class="card-header">
+                    <h1 class="text-center">TODO TABLE</h1>
+
+                </div>
+                <div class="card-body">
+                    <table class="table" id="mytable">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Name of User</th>
+                                <th scope="col">Message</th>
+
+                            </tr>
+                        </thead>
+                        <tbody id="mybody">
+
+
+                        </tbody>
+                    </table>
+
+                    </table>
+
+                </div>
+            </div>
+
+
+
+        </div>
+    </div>
+
+
+
+
+
 </body>
+
+<script src="MyJs.js" type="text/javascript"></script>
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+
+<!-- Datatable CDN  -->
+
+
+<script src="https://code.jquery.com/jquery-3.5.1.js" type="text/javascript"></script>
+<script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js" type="text/javascript"></script>
+
+<script>
+    $(document).ready(function () {
+        $('#mytable').DataTable();
+    });
+
+</script>
+
+
+
+
+
 
 </html>
